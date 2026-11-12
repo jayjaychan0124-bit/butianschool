@@ -1,1 +1,66 @@
+<!DOCTYPE html>
+<html lang="zh‑HK">
+<head>
+<meta charset="UTF‑8">
+<title>1 / 4：學習強國 QR‑Code 掃描異常</title>
+<style>
+*{box-sizing:border-box;font-family:-apple-system,BlinkMacSystemFont, sans-serif;}
+body{background:#f3f5f7;padding:30px;}
+.card{max-width:900px;margin:0 auto;background:#fff;border-radius:16px;box-shadow:0 2px 12px #00000018;padding:28px;}
+.box{border:1px solid #ddd;padding:20px;border-radius:10px;text-align:center;}
+.bad{border-color:#e66465;background:#fff7f7;}
+.code-block{background:#222;color:#fff;padding:16px;border-radius:8px;text-align:left;font-family:monospace;font-size:13px;overflow-x:auto;}
+.desc{margin-top:20px;line-height:1.7;color:#444;}
+.risk-block{background:#fff2cc;border:1px solid #f39c12;padding:18px;border-radius:10px;margin-top:20px;}
+.fix-block{background:#e8f5e9;border:1px solid #27ae60;padding:18px;border-radius:10px;margin-top:20px;}
+h3{margin-top:0;}
+.page-footer{margin-top:30px;display:flex;justify-content:flex-end;}
+.next-btn{padding:10px 22px;background:#2b78e4;color:white;border:none;border-radius:8px;font-size:16px;text-decoration:none;}
+.tip-red{color:#c0392b;font-weight:bold;}
+</style>
+</head>
+<body>
+<div class="card">
+<h2>問題 1 / 4：首頁「學習強國」二維碼 QR‑Code 掃描異常</h2>
+<div class="box bad">
+<h3>🔴 原網站現象</h3>
+<p>圖片檔：wm04.png，網頁顯示二維碼正常，但手機相機無法識別掃描</p>
+<div style="width:140px;height:140px;margin:10px auto;border:2px dashed #999;display:flex;align-items:center;justify-content:center;cursor:grab;">
+wm04.png 故障二維碼
+</div>
+<p class="tip-red">補充測試：手動修改網址為 wm03.png，圖片仍可載入，但掃描跳轉至外部微博空白頁，鏈接已過期失效</p>
+</div>
 
+<div class="desc">
+<h3>頁面代碼位置參考</h3>
+<div class="code-block">
+&lt;div class="qrcode‑box"&gt;
+&lt;img src="/source/static/www/jyksy/assets/img/wm04.png"
+alt="學習強國二維碼" width="120" height="120"&gt;
+&lt;/div&gt;
+</div>
+<p><strong>故障成因：</strong>圖片透明通道、壓縮失真、CSS圖層干擾，導致手機掃碼識別失敗；wm03.png為伺服器殘留舊二維碼，內嵌網址已經失效。</p>
+
+<div class="risk-block">
+<h3>⚠️ 風險管理與影響</h3>
+<p>1. 公眾無法透過官網二維碼進入學習強國平台，影響政策宣傳、資訊傳達效果。</p>
+<p>2. 舊二維碼wm03.png指向外部無效微博頁面，容易令訪客產生困惑，降低網站公信力。</p>
+<p>3. 作為官方院校網站，基礎功能失效會影響用戶對於網站維護、服務穩定性嘅印象。</p>
+<p>風險等級：低風險（前端展示故障，無資料泄露、權限越權）</p>
+</div>
+
+<div class="fix-block">
+<h3>✅ 修復方案</h3>
+<p>1. 重新生成學習強國正確二維碼圖片，使用無透明背景、標準分辨率圖片替換現有 wm04.png。</p>
+<p>2. 清理伺服器內殘留嘅舊檔 wm03.png，避免殘留舊二維碼被訪客訪問，造成錯誤跳轉。</p>
+<p>3. 部署完成後，分別使用電腦瀏覽器、多款手機瀏覽器測試，並清除網站緩存驗證二維碼可以正常掃描識別。</p>
+<p>4. 建議後續發布更新前，增加二維碼掃描測試步驟，避免再次出現同類展示故障。</p>
+</div>
+</div>
+
+<div class="page-footer">
+<a href="index2.html" class="next-btn">下一頁 → 智能客服無法使用</a>
+</div>
+</div>
+</body>
+</html>
