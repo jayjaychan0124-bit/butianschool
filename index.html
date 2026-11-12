@@ -21,7 +21,7 @@ h3{margin-top:0;}
 </head>
 <body>
 <div class="card">
-<h2>首页「学习强国」二维码 QR‑Code 扫码异常</h2>
+<h2>首页「学习强国号」二维码 QR‑Code 扫码异常</h2>
 <div class="box bad">
 <h3>🔴 原网站现象</h3>
 <p>图片文件：wm04.png，网页二维码显示正常，但手机相机无法识别扫码</p>
@@ -36,7 +36,7 @@ wm04.png 故障二维码
 <div class="code-block">
 &lt;div class="qrcode‑box"&gt;
 &lt;img src="/source/static/www/jyksy/assets/img/wm04.png"
-alt="学习强国二维码" width="120" height="120"&gt;
+alt="学习强国号二维码" width="120" height="120"&gt;
 &lt;/div&gt;
 </div>
 <p><strong>故障成因：</strong>图片存在透明通道、压缩失真、CSS图层干扰，导致手机扫码识别失败；wm03.png为服务器残留旧二维码，内嵌网址已经失效。</p>
@@ -51,7 +51,7 @@ alt="学习强国二维码" width="120" height="120"&gt;
 
 <div class="fix-block">
 <h3>✅ 修复方案</h3>
-<p>1. 重新生成学习强国正确二维码图片，使用无透明背景、标准分辨率图片替换现有 wm04.png。</p>
+<p>1. 重新生成学习强国号正确二维码图片，使用无透明背景、标准分辨率图片替换现有 wm04.png。</p>
 <p>2. 清理服务器内残留的旧文件 wm03.png，避免残留旧二维码被访客访问，造成错误跳转。</p>
 <p>3. 部署完成后，分别使用电脑浏览器、多款手机浏览器进行测试，清除网站缓存，验证二维码可以正常扫码识别。</p>
 <p>4. 建议后续网站更新上线前，增加二维码扫码验证测试步骤，防止再次出现同类展示故障。</p>
