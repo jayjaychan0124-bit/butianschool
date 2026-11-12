@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="zh‑HK">
+<head>
+<meta charset="UTF‑8">
+<title>上海教育學院‑QR Code 漏洞示範卡片</title>
+<style>
+*{box-sizing:border-box;font-family:-apple-system,BlinkMacSystemFont, sans-serif;}
+body{background:#f3f5f7;padding:30px;}
+.card{max-width:900px;margin:0 auto;background:#fff;border-radius:16px;box-shadow:0 2px 12px #00000018;padding:28px;}
+.row{display:grid;grid-template-columns:1fr 1fr;gap:24px;}
+.box{border:1px solid #ddd;padding:20px;border-radius:10px;text-align:center;}
+.bad{border-color:#e66465;background:#fff7f7;}
+.good{border-color:#49b87e;background:#f4fff9;}
+.code-block{background:#222;color:#fff;padding:16px;border-radius:8px;text-align:left;font-family:monospace;font-size:13px;overflow-x:auto;}
+.desc{margin-top:20px;line-height:1.7;color:#444;}
+h3{margin-top:0;}
+</style>
+</head>
+<body>
+<div class="card">
+<h2>示範卡片：首頁二維碼掃描異常問題</h2>
+<div class="row">
+<div class="box bad">
+<h3>🔴 原網站故障狀態</h3>
+<p>二維碼圖片顯示正常，但手機相機無法識別掃描</p>
+<div style="width:120px;height:120px;margin:10px auto;border:2px dashed #999;display:flex;align-items:center;justify-content:center;">
+故障QR碼位置
+</div>
+<p style="font-size:14px;color:#777;">常見成因：圖片透明通道、壓縮失真、CSS圖層干擾</p>
+</div>
+<div class="box good">
+<h3>🟢 修復後參考效果</h3>
+<p>標準無透明PNG二維碼，手機可正常掃描</p>
+<div style="width:120px;height:120px;margin:10px auto;border:2px solid #333;display:flex;align-items:center;justify-content:center;">
+正常QR碼
+</div>
+</div>
+</div>
+
+<div class="desc">
+<h3>✅ 建議可使用嘅HTML代碼（放置位置：首頁左上角）</h3>
+<div class="code-block">
+&lt;!-- 學習強國二維碼標準代碼 --&gt;
+&lt;div class="qrcode‑box"&gt;
+&lt;img src="qrcode‑xuexi.png" alt="學習強國二維碼" width="120" height="120"&gt;
+&lt;/div&gt;
+</div>
+<p><strong>使用備註：</strong>僅作為修復參考示範，真實部署需要根據官網原有源碼位置替換，同時更換一張品質正常、不含透明背景嘅二維碼圖片，完成之後使用多款手機測試掃碼。</p>
+</div>
+</div>
+</body>
+</html>
