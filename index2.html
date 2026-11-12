@@ -1,1 +1,64 @@
+<!DOCTYPE html>
+<html lang="zh‑CN">
+<head>
+<meta charset="UTF‑8">
+<title>智能客服按钮无法点击</title>
+<style>
+*{box-sizing:border-box;font-family:-apple-system,BlinkMacSystemFont, sans-serif;}
+body{background:#f3f5f7;padding:30px;}
+.card{max-width:900px;margin:0 auto;background:#fff;border-radius:16px;box-shadow:0 2px 12px #00000018;padding:28px;}
+.box{border:1px solid #ddd;padding:20px;border-radius:10px;text-align:center;}
+.bad{border-color:#e66465;background:#fff7f7;}
+.code-block{background:#222;color:#fff;padding:16px;border-radius:8px;text-align:left;font-family:monospace;font-size:13px;overflow-x:auto;}
+.desc{margin-top:20px;line-height:1.7;color:#444;}
+.risk-block{background:#fff2cc;border:1px solid #f39c12;padding:18px;border-radius:10px;margin-top:20px;}
+.fix-block{background:#e8f5e9;border:1px solid #27ae60;padding:18px;border-radius:10px;margin-top:20px;}
+h3{margin-top:0;}
+.page-footer{margin-top:30px;display:flex;justify-content:space-between;}
+.back-btn{padding:10px 22px;background:#666;color:white;border:none;border-radius:8px;font-size:16px;text-decoration:none;}
+.next-btn{padding:10px 22px;background:#2b78e4;color:white;border:none;border-radius:8px;font-size:16px;text-decoration:none;}
+</style>
+</head>
+<body>
+<div class="card">
+<h2>智能客服按钮无法正常点击</h2>
+<div class="box bad">
+<h3>🔴 原网站现象</h3>
+<p>页面上方的智能客服入口，直接点击按钮有响应，网页报错，跳转后页面访问异常；<br>
+页面下方网上咨询栏目内的智能客服选项无法正常点击，需拖拽提取网址进行访问，打开后网站报错，无法正常加载。</p>
+</div>
 
+<div class="desc">
+<h3>故障排查参考</h3>
+<div class="code-block">
+/* 重点检查链接有效性，确认网页版智能客服是否已下线，当前咨询渠道是否调整为电话、微信 */
+.service-button{
+z-index: 3;
+}
+</div>
+<p><strong>故障成因：</strong>推测网页端智能客服服务已经停用，官方咨询渠道调整为手机端电话、微信方式，但网站两处页面仍保留旧的客服链接地址，链接未及时更新或移除，访问时服务无法正常响应，从而产生网页报错。</p>
+
+<div class="risk-block">
+<h3>⚠️ 风险管理与影响</h3>
+<p>1. 用户点击智能客服入口无法正常访问咨询页面，容易产生困惑，不清楚正确的咨询途径。</p>
+<p>2. 失效按钮长期保留在网站页面中，降低网站使用体验，不利于官方咨询渠道的展示引导。</p>
+<p>3. 有咨询需求的用户无法快速找到有效联系方式，影响问题反馈效率。</p>
+<p>风险等级：低风险（前端页面配置问题，不存在后台数据安全问题）</p>
+</div>
+
+<div class="fix-block">
+<h3>✅ 修复方案</h3>
+<p>1. 核实网页版智能客服是否已停止服务，确认当前有效的电话、微信咨询渠道。</p>
+<p>2. 如网页客服不再提供服务，可移除页面上两处智能客服入口，或将按钮链接替换为最新的咨询指引页面。</p>
+<p>3. 修改完成后，使用电脑、手机浏览器分别测试，确认不再出现无效跳转报错。</p>
+<p>4. 建议定期巡检网站链接，及时清理已下线功能的旧入口，避免同类问题重复出现。</p>
+</div>
+</div>
+
+<div class="page-footer">
+<a href="index.html" class="back-btn">← 返回 QR‑Code</a>
+<a href="index3.html" class="next-btn">下一页 → 招闻天下</a>
+</div>
+</div>
+</body>
+</html>
