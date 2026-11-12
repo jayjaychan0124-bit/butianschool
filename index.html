@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="zh‑CN">
+<head>
+<meta charset="UTF‑8">
+<title>学习强国 QR‑Code 扫码异常</title>
+<style>
+*{box-sizing:border-box;font-family:-apple-system,BlinkMacSystemFont, sans-serif;}
+body{background:#f3f5f7;padding:30px;}
+.card{max-width:900px;margin:0 auto;background:#fff;border-radius:16px;box-shadow:0 2px 12px #00000018;padding:28px;}
+.box{border:1px solid #ddd;padding:20px;border-radius:10px;text-align:center;}
+.bad{border-color:#e66465;background:#fff7f7;}
+.code-block{background:#222;color:#fff;padding:16px;border-radius:8px;text-align:left;font-family:monospace;font-size:13px;overflow-x:auto;}
+.desc{margin-top:20px;line-height:1.7;color:#444;}
+.risk-block{background:#fff2cc;border:1px solid #f39c12;padding:18px;border-radius:10px;margin-top:20px;}
+.fix-block{background:#e8f5e9;border:1px solid #27ae60;padding:18px;border-radius:10px;margin-top:20px;}
+h3{margin-top:0;}
+.page-footer{margin-top:30px;display:flex;justify-content:flex-end;}
+.next-btn{padding:10px 22px;background:#2b78e4;color:white;border:none;border-radius:8px;font-size:16px;text-decoration:none;}
+.tip-red{color:#c0392b;font-weight:bold;}
+</style>
+</head>
+<body>
+<div class="card">
+<h2>首页「学习强国」二维码 QR‑Code 扫码异常</h2>
+<div class="box bad">
+<h3>🔴 原网站现象</h3>
+<p>图片文件：wm04.png，网页二维码显示正常，但手机相机无法识别扫码</p>
+<div style="width:140px;height:140px;margin:10px auto;border:2px dashed #999;display:flex;align-items:center;justify-content:center;cursor:grab;">
+wm04.png 故障二维码
+</div>
+<p class="tip-red">补充测试：手动修改网址为 wm03.png，图片仍可加载，但扫码跳转至外部微博空白页面，链接已经过期失效</p>
+</div>
+
+<div class="desc">
+<h3>页面代码位置参考</h3>
+<div class="code-block">
+&lt;div class="qrcode‑box"&gt;
+&lt;img src="/source/static/www/jyksy/assets/img/wm04.png"
+alt="学习强国二维码" width="120" height="120"&gt;
+&lt;/div&gt;
+</div>
+<p><strong>故障成因：</strong>图片存在透明通道、压缩失真、CSS图层干扰，导致手机扫码识别失败；wm03.png为服务器残留旧二维码，内嵌网址已经失效。</p>
+
+<div class="risk-block">
+<h3>⚠️ 风险管理与影响</h3>
+<p>1. 公众无法通过官网二维码进入学习强国平台，影响政策宣传、信息传达效果。</p>
+<p>2. 旧二维码wm03.png指向外部无效微博页面，容易使访客产生困惑，降低网站公信力。</p>
+<p>3. 作为官方院校网站，基础功能失效会影响用户对于网站维护、服务稳定性的印象。</p>
+<p>风险等级：低风险（前端展示故障，不存在数据泄露、权限越权问题）</p>
+</div>
+
+<div class="fix-block">
+<h3>✅ 修复方案</h3>
+<p>1. 重新生成学习强国正确二维码图片，使用无透明背景、标准分辨率图片替换现有 wm04.png。</p>
+<p>2. 清理服务器内残留的旧文件 wm03.png，避免残留旧二维码被访客访问，造成错误跳转。</p>
+<p>3. 部署完成后，分别使用电脑浏览器、多款手机浏览器进行测试，清除网站缓存，验证二维码可以正常扫码识别。</p>
+<p>4. 建议后续网站更新上线前，增加二维码扫码验证测试步骤，防止再次出现同类展示故障。</p>
+</div>
+</div>
+
+<div class="page-footer">
+<a href="index2.html" class="next-btn">下一页 → 智能客服无法使用</a>
+</div>
+</div>
+</body>
+</html>
