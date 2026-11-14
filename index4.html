@@ -1,1 +1,61 @@
+<!DOCTYPE html>
+<html lang="zh‑CN">
+<head>
+<meta charset="UTF‑8">
+<title>现场接待预约平台 链接异常</title>
+<style>
+*{box-sizing:border-box;font-family:-apple-system,BlinkMacSystemFont, sans-serif;}
+body{background:#f3f5f7;padding:30px;}
+.card{max-width:900px;margin:0 auto;background:#fff;border-radius:16px;box-shadow:0 2px 12px #00000018;padding:28px;}
+.box{border:1px solid #ddd;padding:20px;border-radius:10px;text-align:center;}
+.bad{border-color:#e66465;background:#fff7f7;}
+.code-block{background:#222;color:#fff;padding:16px;border-radius:8px;text-align:left;font-family:monospace;font-size:13px;overflow-x:auto;}
+.desc{margin-top:20px;line-height:1.7;color:#444;}
+.risk-block{background:#fff2cc;border:1px solid #f39c12;padding:18px;border-radius:10px;margin-top:20px;}
+.fix-block{background:#e8f5e9;border:1px solid #27ae60;padding:18px;border-radius:10px;margin-top:20px;}
+h3{margin-top:0;}
+.page-footer{margin-top:30px;display:flex;justify-content:space-between;}
+.back-btn{padding:10px 22px;background:#666;color:white;border:none;border-radius:8px;font-size:16px;text-decoration:none;}
+</style>
+</head>
+<body>
+<div class="card">
+<h2>现场接待预约平台 链接异常</h2>
+<div class="box bad">
+<h3>🔴 原网站现象</h3>
+<p>用户尝试点击现场接待预约平台进行预约，该文字本身并非可点击按钮，但可以拖拽提取出隐藏网址，打开后为报错网页；二维码旁的“官方新媒体”为正常无链接的纯文字，二者形成对比。</p>
+</div>
 
+<div class="desc">
+<h3>故障排查参考</h3>
+<div class="code-block">
+/* 移除隐藏超链接，改为提示文字，引导用户通过智能客服等官方渠道预约 */
+.reserve-link{
+cursor: default;
+}
+</div>
+<p><strong>故障成因：</strong>现场接待预约平台文字残留了无效的隐藏链接代码，并未清理干净，用户拖拽时能够提取出失效网址，误以为此处可以直接完成预约。</p>
+
+<div class="risk-block">
+<h3>⚠️ 风险管理与影响</h3>
+<p>1. 用户误以为现场接待预约平台可以直接点击预约，拖拽提取网址后打开报错页面，造成操作误导。</p>
+<p>2. 缺少清晰的预约指引，用户不知道正确的预约入口，降低使用体验。</p>
+<p>3. 长期存在残留无效链接，会对官方网站严谨性、公信力造成轻微负面影响。</p>
+<p>风险等级：低风险（仅前端页面代码残留问题，不存在后台数据安全隐患）</p>
+</div>
+
+<div class="fix-block">
+<h3>✅ 修复方案</h3>
+<p>1. 将“现场接待预约平台”改为纯文字，修改文字提示为：请于智能客服或其他官方链接进行预约。</p>
+<p>2. 移除该位置原有的隐藏网址链接，不再绑定跳转地址。</p>
+<p>3. 核对并更新页面内正确的预约访问地址，保证用户可以通过智能客服等官方渠道正常预约。</p>
+<p>4. 建议定期加强网站安全措施以及风险评估。</p>
+</div>
+</div>
+
+<div class="page-footer">
+<a href="index3.html" class="back-btn">← 返回 招闻天下</a>
+</div>
+</div>
+</body>
+</html>
