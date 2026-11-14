@@ -1,1 +1,63 @@
+<!DOCTYPE html>
+<html lang="zh‑CN">
+<head>
+<meta charset="UTF‑8">
+<title>招闻天下 链接跳转异常</title>
+<style>
+*{box-sizing:border-box;font-family:-apple-system,BlinkMacSystemFont, sans-serif;}
+body{background:#f3f5f7;padding:30px;}
+.card{max-width:900px;margin:0 auto;background:#fff;border-radius:16px;box-shadow:0 2px 12px #00000018;padding:28px;}
+.box{border:1px solid #ddd;padding:20px;border-radius:10px;text-align:center;}
+.bad{border-color:#e66465;background:#fff7f7;}
+.code-block{background:#222;color:#fff;padding:16px;border-radius:8px;text-align:left;font-family:monospace;font-size:13px;overflow-x:auto;}
+.desc{margin-top:20px;line-height:1.7;color:#444;}
+.risk-block{background:#fff2cc;border:1px solid #f39c12;padding:18px;border-radius:10px;margin-top:20px;}
+.fix-block{background:#e8f5e9;border:1px solid #27ae60;padding:18px;border-radius:10px;margin-top:20px;}
+h3{margin-top:0;}
+.page-footer{margin-top:30px;display:flex;justify-content:space-between;}
+.back-btn{padding:10px 22px;background:#666;color:white;border:none;border-radius:8px;font-size:16px;text-decoration:none;}
+.next-btn{padding:10px 22px;background:#2b78e4;color:white;border:none;border-radius:8px;font-size:16px;text-decoration:none;}
+</style>
+</head>
+<body>
+<div class="card">
+<h2>招闻天下 链接跳转异常</h2>
+<div class="box bad">
+<h3>🔴 原网站现象</h3>
+<p>点击网站「招闻天下」按钮之后，跳转页面返回404网页错误；404页面底部设有返回首页按钮，点击该返回按钮并不会回到官网主页，而是跳转到另一个分站页面，链接指向错误。<br>备注：怀疑该栏目规划名称应为「朝闻天下」，按钮文字疑似存在用字错误。</p>
+</div>
 
+<div class="desc">
+<h3>故障排查参考</h3>
+<div class="code-block">
+/* 核对栏目跳转地址以及返回首页链接，修正为官网正确地址 */
+.jump-button{
+cursor: pointer;
+}
+</div>
+<p><strong>故障成因：</strong>页面配置的跳转链接地址有误，跳转页面内“返回首页”的超链接填写为分站地址，并非官网首页根地址，导致点击返回后无法回到主站首页。</p>
+
+<div class="risk-block">
+<h3>⚠️ 风险管理与影响</h3>
+<p>1. 用户点击招闻天下栏目直接出现404错误页面，无法进入预期页面，影响正常浏览。</p>
+<p>2. 返回首页按钮失效，用户容易在不同分站之间迷路，降低网站使用体验。</p>
+<p>3. 长期存在错误链接，会对官方网站严谨性、公信力造成轻微负面影响。</p>
+<p>风险等级：低风险（仅前端链接配置错误，无后台数据安全隐患）</p>
+</div>
+
+<div class="fix-block">
+<h3>✅ 修复方案</h3>
+<p>1. 核对「招闻天下」按钮对应的目标链接，修正为栏目正确访问地址，消除404报错。</p>
+<p>2. 修改404页面内“返回首页”按钮的链接，替换为官网首页根路径地址。</p>
+<p>3. 修改完成后，多次点击测试栏目跳转、返回首页两项功能，确认访问正常。</p>
+<p>4. 建议定期加强网站安全措施以及风险评估。</p>
+</div>
+</div>
+
+<div class="page-footer">
+<a href="index2.html" class="back-btn">← 返回 智能客服</a>
+<a href="index4.html" class="next-btn">下一页 → 现场接待预约平台</a>
+</div>
+</div>
+</body>
+</html>
